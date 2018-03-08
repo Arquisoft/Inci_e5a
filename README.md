@@ -9,7 +9,7 @@ Alejandro Barrera Sánchez
 
 Ismael Cadenas Alonso
 
-Daniel Bermejo Blanco
+Daniel Bermejo Blanco (UO204115)
 
 Álvaro Camporro Ayala
 
