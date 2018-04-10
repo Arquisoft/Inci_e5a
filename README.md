@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # InciManagement_e5a
 InciManagement
 
@@ -46,3 +47,25 @@ Como ejecutar:
  
  9-Enviar los datos de la incidencia
   
+=======
+# Inci_e5a
+Incidence system e5a
+
+# Autores
+
+Tania Álvarez Díaz (UO244856)
+
+Alejandro Barrera Sánchez (UO251893)
+
+Ismael Cadenas Alonso (UO251025)
+
+Daniel Bermejo Blanco (UO204115)
+
+Álvaro Camporro Ayala
+
+Guillermo Díaz Pérez
+
+Jesús Fernández Velasco (UO250915)
+
+Miguel Villademoros García (UO251836)
+>>>>>>> branch 'master' of https://github.com/Arquisoft/Inci_e5a.git
