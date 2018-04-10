@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # InciManagement_e5a
 InciManagement
 
@@ -68,4 +67,3 @@ Guillermo Díaz Pérez
 Jesús Fernández Velasco (UO250915)
 
 Miguel Villademoros García (UO251836)
->>>>>>> branch 'master' of https://github.com/Arquisoft/Inci_e5a.git
