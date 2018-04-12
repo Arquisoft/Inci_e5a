@@ -62,7 +62,7 @@ Daniel Bermejo Blanco (UO204115)
 
 Álvaro Camporro Ayala
 
-Guillermo Díaz Pérez
+Guillermo Díaz Pérez (UO251387)
 
 Jesús Fernández Velasco (UO250915)
 
