@@ -7,7 +7,7 @@ InciManagement
 
 AUTORES:
 
-Alvaro Manuel Camporrox Ayala (UO251562)
+Alvaro Manuel Camporro Ayala (UO251562)
 
 Miguel Villademoros García (UO251836)
 
@@ -60,9 +60,9 @@ Ismael Cadenas Alonso (UO251025)
 
 Daniel Bermejo Blanco (UO204115)
 
-Álvaro Camporro Ayala
+Álvaro Camporro Ayala (UO251562)
 
-Guillermo Díaz Pérez
+Guillermo Díaz Pérez (UO251387)
 
 Jesús Fernández Velasco (UO250915)
 
