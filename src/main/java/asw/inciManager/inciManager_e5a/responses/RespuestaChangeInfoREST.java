@@ -1,4 +1,4 @@
-package asw.agents.webService.responses;
+package asw.inciManager.inciManager_e5a.responses;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

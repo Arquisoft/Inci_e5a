@@ -1,8 +1,8 @@
-package asw.agents.util;
+package asw.inciManager.inciManager_e5a.util;
 
-import asw.agents.factory.ErrorFactory;
-import asw.agents.factory.ErrorFactory.Errors;
 import asw.inciManager.inciManager_e5a.entities.Agent;
+import asw.inciManager.inciManager_e5a.factory.ErrorFactory;
+import asw.inciManager.inciManager_e5a.factory.ErrorFactory.Errors;
 
 public class Assert {
 

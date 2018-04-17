@@ -1,4 +1,4 @@
-package asw.agents.webService.request;
+package asw.inciManager.inciManager_e5a.request;
 
 public class PeticionChangeEmailREST {
 

@@ -1,16 +1,16 @@
-package asw.agents.factory;
+package asw.inciManager.inciManager_e5a.factory;
 
-import asw.agents.webService.responses.errors.ErrorResponse;
-import asw.agents.webService.responses.errors.IncorrectPasswordErrorResponse;
-import asw.agents.webService.responses.errors.KindNotFoundResponse;
-import asw.agents.webService.responses.errors.PasswordDoNotMatchErrorResponse;
-import asw.agents.webService.responses.errors.RequiredEmailErrorResponse;
-import asw.agents.webService.responses.errors.RequiredKindErrorResponse;
-import asw.agents.webService.responses.errors.RequiredPasswordErrorResponse;
-import asw.agents.webService.responses.errors.SameEmailErrorResponse;
-import asw.agents.webService.responses.errors.UnknownErrorResponse;
-import asw.agents.webService.responses.errors.UserNotFoundResponse;
-import asw.agents.webService.responses.errors.WrongEmailStyleErrorResponse;
+import asw.inciManager.inciManager_e5a.responses.errors.ErrorResponse;
+import asw.inciManager.inciManager_e5a.responses.errors.IncorrectPasswordErrorResponse;
+import asw.inciManager.inciManager_e5a.responses.errors.KindNotFoundResponse;
+import asw.inciManager.inciManager_e5a.responses.errors.PasswordDoNotMatchErrorResponse;
+import asw.inciManager.inciManager_e5a.responses.errors.RequiredEmailErrorResponse;
+import asw.inciManager.inciManager_e5a.responses.errors.RequiredKindErrorResponse;
+import asw.inciManager.inciManager_e5a.responses.errors.RequiredPasswordErrorResponse;
+import asw.inciManager.inciManager_e5a.responses.errors.SameEmailErrorResponse;
+import asw.inciManager.inciManager_e5a.responses.errors.UnknownErrorResponse;
+import asw.inciManager.inciManager_e5a.responses.errors.UserNotFoundResponse;
+import asw.inciManager.inciManager_e5a.responses.errors.WrongEmailStyleErrorResponse;
 
 //Creacion de los distintos tipos de error.
 public class ErrorFactory {

@@ -13,15 +13,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import asw.agents.util.Assert;
-import asw.agents.webService.request.PeticionChangeEmailREST;
-import asw.agents.webService.request.PeticionChangePasswordREST;
-import asw.agents.webService.request.PeticionInfoREST;
-import asw.agents.webService.responses.RespuestaChangeInfoREST;
-import asw.agents.webService.responses.RespuestaInfoREST;
-import asw.agents.webService.responses.errors.ErrorResponse;
 import asw.inciManager.inciManager_e5a.entities.Agent;
+import asw.inciManager.inciManager_e5a.request.PeticionChangeEmailREST;
+import asw.inciManager.inciManager_e5a.request.PeticionChangePasswordREST;
+import asw.inciManager.inciManager_e5a.request.PeticionInfoREST;
+import asw.inciManager.inciManager_e5a.responses.RespuestaChangeInfoREST;
+import asw.inciManager.inciManager_e5a.responses.RespuestaInfoREST;
+import asw.inciManager.inciManager_e5a.responses.errors.ErrorResponse;
 import asw.inciManager.inciManager_e5a.services.AgentsService;
+import asw.inciManager.inciManager_e5a.util.Assert;
 
 public class AgentController {
 	

@@ -1,23 +1,21 @@
-package asw.agents.webService.responses.errors;
+package asw.inciManager.inciManager_e5a.responses.errors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(value=HttpStatus.NOT_FOUND, reason="Unknown error")
-public class UnknownErrorResponse extends ErrorResponse {
-	
+@ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "Same email")
+public class SameEmailErrorResponse extends ErrorResponse{
 	private static final long serialVersionUID = 1L;
 
 	@Override
 	public String getMessageJSONFormat() {
 		// TODO Auto-generated method stub
-		return "{\"reason\": \"Unknown error\"}";
+		return "{\"reason\": \"Same email\"}";
 	}
 
 	@Override
 	public String getMessageStringFormat() {
-		// TODO Auto-generated method stub
-		return "Unknown error";
+		 return "Same email";
 	}
 
 }

@@ -1,4 +1,4 @@
-package asw.agents.webService.responses.errors;
+package asw.inciManager.inciManager_e5a.responses.errors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
