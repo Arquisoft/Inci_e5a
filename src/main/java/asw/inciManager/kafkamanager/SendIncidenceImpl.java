@@ -1,12 +1,10 @@
-package asw.kafkamanager;
-
-import javax.annotation.ManagedBean;
+package asw.inciManager.kafkamanager;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import asw.dbManagement.model.Incidence;
-import asw.kafkamanager.producers.KafkaProducer;
+import asw.inciManager.kafkamanager.producers.KafkaProducer;
 
 @Service
 public class SendIncidenceImpl implements SendIncidence{

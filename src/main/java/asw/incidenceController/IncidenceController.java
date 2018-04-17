@@ -19,7 +19,7 @@ import asw.dbManagement.GetAgent;
 import asw.dbManagement.model.Agent;
 import asw.dbManagement.model.Incidence;
 import asw.incidenceController.services.IncidenceService;
-import asw.kafkamanager.SendIncidenceImpl;
+import asw.inciManager.kafkamanager.SendIncidenceImpl;
 
 @Controller
 public class IncidenceController {

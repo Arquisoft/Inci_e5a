@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import asw.dbManagement.model.Incidence;
 import asw.dbManagement.repository.IncidenceRepository;
-import asw.kafkamanager.SendIncidenceImpl;
+import asw.inciManager.kafkamanager.SendIncidenceImpl;
 
 @Service
 public class IncidenceService {

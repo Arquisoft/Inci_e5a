@@ -1,4 +1,4 @@
-package asw.kafkamanager;
+package asw.inciManager.kafkamanager;
 
 import asw.dbManagement.model.Incidence;
 
