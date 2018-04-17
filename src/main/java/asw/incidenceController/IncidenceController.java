@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import asw.dbManagement.GetAgent;
 import asw.dbManagement.model.Agent;
 import asw.dbManagement.model.Incidence;
-import asw.incidenceController.services.IncidenceService;
+import asw.inciManager.inciManager_e5a.services.IncidenceService;
 import asw.inciManager.kafkamanager.SendIncidenceImpl;
 
 @Controller
