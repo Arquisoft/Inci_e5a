@@ -1,4 +1,4 @@
-package asw.dbManagement.model;
+package asw.inciManager.inciManager_e5a.entities;
 
 import java.util.Date;
 import java.util.List;

@@ -2,7 +2,7 @@ package asw.agents.util;
 
 import asw.agents.factory.ErrorFactory;
 import asw.agents.factory.ErrorFactory.Errors;
-import asw.dbManagement.model.Agent;
+import asw.inciManager.inciManager_e5a.entities.Agent;
 
 public class Assert {
 
@@ -12,14 +12,14 @@ public class Assert {
 	 * @return excepcion si esta vacio
 	 */
 	public static boolean isEmailEmpty(String email) {
-		if(email.trim().isEmpty())
+		if (email.trim().isEmpty())
 			throw ErrorFactory.getError(Errors.REQUIRED_EMAIL);
 		else
 			return false;
 	}
-	
+
 	public static boolean isPasswordEmpty(String password) {
-		if(password.trim().isEmpty())
+		if (password.trim().isEmpty())
 			throw ErrorFactory.getError(Errors.REQUIRED_PASSWORD);
 		else
 			return false;
@@ -27,6 +27,7 @@ public class Assert {
 
 	/**
 	 * Comprobacion de si el correo es valido
+	 * 
 	 * @param email
 	 * @return true si es valido.
 	 */
@@ -41,49 +42,48 @@ public class Assert {
 		}
 		return true;
 	}
-	
+
 	/**
 	 * 
 	 * @param agent
 	 * @return devuelve false si no es null o excepcion
 	 */
-	public static boolean isAgentNull(Agent agent){
+	public static boolean isAgentNull(Agent agent) {
 		if (agent == null) {
 			throw ErrorFactory.getError(Errors.USER_NOT_FOUND);
 		}
-		return false;		
+		return false;
 	}
-	
-	public static boolean isPasswordCorrect(String password,Agent agent){
+
+	public static boolean isPasswordCorrect(String password, Agent agent) {
 		if (!password.equals(agent.getPassword())) {
 			throw ErrorFactory.getError(Errors.INCORRECT_PASSWORD_DO_NOT_MATCH);
 		}
 		return true;
 	}
-	
-	public static boolean isSamePassword(String password, String password2){
+
+	public static boolean isSamePassword(String password, String password2) {
 		if (password.equals(password2)) {
 			throw ErrorFactory.getError(Errors.INCORRECT_PASSWORD);
 		}
 		return true;
 	}
 
-	public static boolean isSameEmail(String email, String email2){
+	public static boolean isSameEmail(String email, String email2) {
 		if (email.equals(email2)) {
 			throw ErrorFactory.getError(Errors.SAME_EMAIL);
 		}
 		return true;
 	}
-	
-	public static boolean isKindNull(String kind){
+
+	public static boolean isKindNull(String kind) {
 		if (kind == null) {
 			throw ErrorFactory.getError(Errors.REQUIRED_KIND);
 		}
-		return false;		
+		return false;
 	}
 
-	public static boolean isKindCorrect(String kind, Agent agent) 
-	{
+	public static boolean isKindCorrect(String kind, Agent agent) {
 		if (!kind.equals(agent.getKind())) {
 			throw ErrorFactory.getError(Errors.INCORRECT_KIND);
 		}

@@ -3,8 +3,8 @@ package asw.inciManager.inciManager_e5a.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import asw.dbManagement.model.Incidence;
-import asw.dbManagement.repository.IncidenceRepository;
+import asw.inciManager.inciManager_e5a.entities.Incidence;
+import asw.inciManager.inciManager_e5a.repositories.IncidenceRepository;
 import asw.inciManager.kafkamanager.SendIncidenceImpl;
 
 @Service

@@ -14,14 +14,15 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import asw.agents.util.Assert;
 import asw.agents.webService.responses.errors.ErrorResponse;
-import asw.dbManagement.GetAgent;
-import asw.dbManagement.model.Agent;
+import asw.inciManager.inciManager_e5a.entities.Agent;
+import asw.inciManager.inciManager_e5a.services.AgentsService;
+
 
 @Controller
 public class GetAgentInfoHTMLController {
 
 	@Autowired
-	private GetAgent getAgent;
+	private AgentsService agentsService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String inicalicerLogin(Model model) {
@@ -37,11 +38,11 @@ public class GetAgentInfoHTMLController {
 		Assert.isPasswordEmpty(password);
 		Assert.isKindNull(kind);
 
-		Agent agent = getAgent.getAgent(email);
+		Agent agent = agentsService.getAgent(email);
 
-		Assert.isAgentNull(agent);
-		Assert.isPasswordCorrect(password, agent);
-		Assert.isKindCorrect(kind,agent);
+		//Assert.isAgentNull(agent);
+		//Assert.isPasswordCorrect(password, agent);
+		//Assert.isKindCorrect(kind,agent);
 
 		session.setAttribute("agent", agent);
 		

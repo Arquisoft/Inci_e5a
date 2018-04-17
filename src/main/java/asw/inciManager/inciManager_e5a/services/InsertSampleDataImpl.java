@@ -1,16 +1,17 @@
-package asw.dbManagement.impl;
+package asw.inciManager.inciManager_e5a.services;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import asw.dbManagement.InsertSampleData;
-import asw.dbManagement.model.Agent;
-import asw.dbManagement.repository.AgentRepository;
+import asw.inciManager.inciManager_e5a.entities.Agent;
+import asw.inciManager.inciManager_e5a.repositories.AgentRepository;
+
+
 
 @Service
-public class InsertSampleDataImpl implements InsertSampleData {
+public class InsertSampleDataImpl  {
 	
 	@Autowired
 	private AgentRepository agentRepository;

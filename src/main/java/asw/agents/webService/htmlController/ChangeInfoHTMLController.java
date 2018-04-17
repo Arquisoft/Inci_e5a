@@ -14,13 +14,14 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import asw.agents.util.Assert;
 import asw.agents.webService.responses.errors.ErrorResponse;
-import asw.dbManagement.UpdateInfo;
-import asw.dbManagement.model.Agent;
+import asw.inciManager.inciManager_e5a.entities.Agent;
+import asw.inciManager.inciManager_e5a.services.AgentsService;
+
 
 @Controller
 public class ChangeInfoHTMLController {
 	@Autowired
-	private UpdateInfo updateInfo;
+	private AgentsService agentsService;
 
 	@RequestMapping(value = "/changeInfo", method = RequestMethod.POST)
 	public String changeInfo() {
@@ -36,11 +37,11 @@ public class ChangeInfoHTMLController {
 
 		// Agent que se ha logeado antes
 		Agent p = (Agent) session.getAttribute("agent");
-		Assert.isAgentNull(p);
-		Assert.isPasswordCorrect(password, p);
+	//	Assert.isAgentNull(p);
+	//	Assert.isPasswordCorrect(password, p);
 
 		// Actualizo sus datos
-		updateInfo.updatePassword(p, password, newPassword);
+		agentsService.updatePassword(p, password, newPassword);
 
 		// Mensaje a mostrar en HTML
 		model.addAttribute("info", "Contraseña actualizada correctamente");
@@ -54,11 +55,11 @@ public class ChangeInfoHTMLController {
 
 		// Agent que se ha logeado antes
 		Agent p = (Agent) session.getAttribute("agent");
-		Assert.isAgentNull(p);
-		Assert.isSameEmail(email, p.getEmail());
+//		Assert.isAgentNull(p);
+// ->	Assert.isSameEmail(email, p.getEmail());
 
 		// Actualizo sus datos
-		updateInfo.updateEmail(p, email);
+		agentsService.updateEmail(p, email);
 
 		// Mensaje a mostrar en HTML
 		model.addAttribute("info", "Email actualizado correctamente");

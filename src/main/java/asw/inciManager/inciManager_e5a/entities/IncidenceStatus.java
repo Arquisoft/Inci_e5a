@@ -1,4 +1,4 @@
-package asw.dbManagement.model;
+package asw.inciManager.inciManager_e5a.entities;
 
 public enum IncidenceStatus {
 

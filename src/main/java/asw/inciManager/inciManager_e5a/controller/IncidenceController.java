@@ -1,4 +1,4 @@
-package asw.incidenceController;
+package asw.inciManager.inciManager_e5a.controller;
 
 import java.math.BigInteger;
 import java.security.SecureRandom;
@@ -6,18 +6,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import asw.dbManagement.GetAgent;
-import asw.dbManagement.model.Agent;
-import asw.dbManagement.model.Incidence;
+import asw.inciManager.inciManager_e5a.entities.Agent;
+import asw.inciManager.inciManager_e5a.entities.Incidence;
+import asw.inciManager.inciManager_e5a.services.AgentsService;
 import asw.inciManager.inciManager_e5a.services.IncidenceService;
 import asw.inciManager.kafkamanager.SendIncidenceImpl;
 
@@ -31,7 +28,7 @@ public class IncidenceController {
 	private SendIncidenceImpl sendIncidence;
 
 	@Autowired
-	private GetAgent getAgentService;
+	private AgentsService agentService;
 	
 	private SecureRandom random = new SecureRandom();
 
@@ -44,7 +41,7 @@ public class IncidenceController {
 	public String createIncidence(@RequestParam String name, @RequestParam String description,  @RequestParam String tags, @RequestParam String username,
 			@RequestParam String password) {
 		//System.out.println("Usuario " + (String) sesion.getAttribute("username") + " Contraseña: " + sesion.getAttribute("password"));
-		Agent agent = getAgentService.getAgent(username);
+		Agent agent = agentService.getAgent(username);
 		if (agent == null || !agent.getPassword().equals(password))
 			return "redirect:/sendIncidence?error";
 		String identificador = nextId();

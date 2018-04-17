@@ -3,7 +3,8 @@ package asw.agents.webService.responses;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import asw.dbManagement.model.Agent;
+import asw.inciManager.inciManager_e5a.entities.Agent;
+
 
 @XmlRootElement(name = "agent")
 public class RespuestaInfoREST {	
