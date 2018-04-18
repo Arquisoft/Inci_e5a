@@ -1,11 +1,12 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head>
+<head th:replace = "fragments/head">
 <meta charset="UTF-8" />
 <title>Enviar Incidencias</title>
 </head>
 <body>
+	<nav th:replace = "fragments/nav"></nav>
 	<h1>Enviar incidencia</h1>
 	<form method="POST" action="/incidence/add">
 		<table>
@@ -40,5 +41,6 @@
 			</tr>
 		</table>
 	</form>
+	<footer th:replace = "fragments/footer"></footer>
 </body>
 </html>
