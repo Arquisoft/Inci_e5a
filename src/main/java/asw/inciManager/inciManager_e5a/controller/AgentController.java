@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,6 +24,7 @@ import asw.inciManager.inciManager_e5a.responses.errors.ErrorResponse;
 import asw.inciManager.inciManager_e5a.services.AgentsService;
 import asw.inciManager.inciManager_e5a.util.Assert;
 
+@Controller
 public class AgentController {
 	
 	@Autowired
@@ -30,7 +32,12 @@ public class AgentController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String inicalicerLogin(Model model) {
-		return "sendIncidence";
+		return "index";
+	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(Model model) {
+		return "index";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
