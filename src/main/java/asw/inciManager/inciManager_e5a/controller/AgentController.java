@@ -37,27 +37,26 @@ public class AgentController {
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model) {
-		return "index";
+		return "login";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String getLogin(HttpSession session, @RequestParam String email, @RequestParam String password, @RequestParam String kind,
+	public String getLogin(HttpSession session, @RequestParam String username, @RequestParam String password, @RequestParam String type,
 			Model model) {
 
-		Assert.isEmailEmpty(email);
-		Assert.isEmailValid(email);
+		Assert.isEmailEmpty(username);
+		Assert.isEmailValid(username);
 		Assert.isPasswordEmpty(password);
-		Assert.isKindNull(kind);
+		Assert.isKindNull(type);
 
-		Agent agent = agentsService.getAgent(email);
-
-		//Assert.isAgentNull(agent);
-		//Assert.isPasswordCorrect(password, agent);
-		//Assert.isKindCorrect(kind,agent);
-
+		Agent agent = agentsService.getAgent(username);
+		
+		if(agent == null)
+			return "login";
+		
 		session.setAttribute("agent", agent);
 		
-		return "datosAgent";
+		return "index";
 	}
 
 	@ExceptionHandler(ErrorResponse.class)
