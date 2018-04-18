@@ -22,6 +22,7 @@ import asw.inciManager.inciManager_e5a.responses.RespuestaChangeInfoREST;
 import asw.inciManager.inciManager_e5a.responses.RespuestaInfoREST;
 import asw.inciManager.inciManager_e5a.responses.errors.ErrorResponse;
 import asw.inciManager.inciManager_e5a.services.AgentsService;
+import asw.inciManager.inciManager_e5a.services.SecurityService;
 import asw.inciManager.inciManager_e5a.util.Assert;
 
 @Controller
@@ -29,6 +30,10 @@ public class AgentController {
 	
 	@Autowired
 	AgentsService agentsService;
+	
+
+	@Autowired
+	private SecurityService securityService;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String inicalicerLogin(Model model) {

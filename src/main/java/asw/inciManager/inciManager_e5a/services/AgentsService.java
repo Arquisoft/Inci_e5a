@@ -1,6 +1,7 @@
 package asw.inciManager.inciManager_e5a.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import asw.inciManager.inciManager_e5a.entities.Agent;
@@ -12,13 +13,6 @@ public class AgentsService {
 
 	@Autowired 
 	AgentRepository repository;
-	
-	
-	public boolean agentsExists(String user, String pass) {
-		return false;
-		
-	}
-	
 	
 	/**
 	 * Método que permite la actualización de la contraseña del Agente
