@@ -45,24 +45,24 @@ public class AgentController {
 		return "login";
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String getLogin(HttpSession session, @RequestParam String username, @RequestParam String password, @RequestParam String type,
-			Model model) {
-
-		Assert.isEmailEmpty(username);
-		Assert.isEmailValid(username);
-		Assert.isPasswordEmpty(password);
-		Assert.isKindNull(type);
-
-		Agent agent = agentsService.getAgent(username);
-		
-		if(agent == null)
-			return "login";
-		
-		session.setAttribute("agent", agent);
-		
-		return "index";
-	}
+//	@RequestMapping(value = "/login", method = RequestMethod.POST)
+//	public String getLogin(HttpSession session, @RequestParam String username, @RequestParam String password, @RequestParam String type,
+//			Model model) {
+//
+//		Assert.isEmailEmpty(username);
+//		Assert.isEmailValid(username);
+//		Assert.isPasswordEmpty(password);
+//		Assert.isKindNull(type);
+//
+//		Agent agent = agentsService.getAgent(username);
+//		
+//		if(agent == null)
+//			return "index";
+//		
+//		session.setAttribute("agent", agent);
+//		
+//		return "index";
+//	}
 
 	@ExceptionHandler(ErrorResponse.class)
 	@ResponseStatus(value = HttpStatus.NOT_FOUND)
