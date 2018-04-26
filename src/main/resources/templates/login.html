@@ -9,7 +9,7 @@
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="username">Usuario:</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" name="username"
+					<input type="text" class="form-control" name="email"
 						placeholder="Ejemplo: paco@asw.com" required="true" />
 				</div>
 			</div>
@@ -32,11 +32,7 @@
 					<button type="submit" class="btn btn-primary">Login</button>
 				</div>
 			</div>
-			<input type="hidden" name="${_csrf.parameterName}"
-				value="${_csrf.token}" />
 		</form>
-		<span class="text-danger" th:if="${param.error}"
-			th:text="#{Error.login.email}" />
 	</div>
 	<footer th:replace="fragments/footer" />
 </body>
