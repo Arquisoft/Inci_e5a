@@ -1,6 +1,7 @@
 package asw.inciManager.inciManager_e5a.repositories;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import asw.inciManager.inciManager_e5a.entities.Agent;
@@ -8,7 +9,7 @@ import asw.inciManager.inciManager_e5a.entities.Agent;
 
 
 @Repository
-public interface AgentRepository extends JpaRepository<Agent, Long> {
+public interface AgentRepository extends CrudRepository<Agent, Long> {
 	
 	/**
 	 * Método que devuelve el Agente el cual es buscado por email
@@ -16,6 +17,7 @@ public interface AgentRepository extends JpaRepository<Agent, Long> {
 	 * @param email del Agente
 	 * @return El Agente con dicho email
 	 */
+	@Query("SELECT a FROM Agent a WHERE a.email = ?1")
 	public Agent findByEmail(String email);
 	
 }
