@@ -10,14 +10,14 @@
 			<img src="/img/student-48.png" alt="logo" />
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
-			<ul class="nav navbar-nav" sec:authorize="isAuthenticated()">
+			<ul class="nav navbar-nav">
 				<li><a href="/">Home</a></li>
-				<li><a href="/profile">Mi perfil</a></li>
-				<li><a href="/sendIncidence">Crear incidencia</a></li>
+				<li sec:authorize="isAuthenticated()"><a href="/profile">Mi perfil</a></li>
+				<li sec:authorize="isAuthenticated()"><a href="/sendIncidence">Crear incidencia</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown" sec:authorize="!isAuthenticated()"><a
-					href="/login"> <span class="glyphicon glyphicon-log-in"></span>
+					href="/userlogin"> <span class="glyphicon glyphicon-log-in"></span>
 						Identificate
 				</a></li>
 				<li sec:authorize="isAuthenticated()"><a href="/logout"> <span

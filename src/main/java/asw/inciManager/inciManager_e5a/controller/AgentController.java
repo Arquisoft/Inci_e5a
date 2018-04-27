@@ -42,26 +42,19 @@ public class AgentController {
 		return "userlogin";
 	}
 
-	// @RequestMapping(value = "/login", method = RequestMethod.POST)
-	// public String getLogin(HttpSession session, @RequestParam String username,
-	// @RequestParam String password, @RequestParam String type,
-	// Model model) {
-	//
-	// Assert.isEmailEmpty(username);
-	// Assert.isEmailValid(username);
-	// Assert.isPasswordEmpty(password);
-	// Assert.isKindNull(type);
-	//
-	// Agent agent = agentsService.getAgent(username);
-	//
-	// if(agent == null)
-	// return "index";
-	//
-	// session.setAttribute("agent", agent);
-	//
-	// return "index";
-	// }
-
+	@RequestMapping(value = "/userlogin", method = RequestMethod.POST)
+	public String loginPost(@RequestParam String email, @RequestParam String password, @RequestParam String type) {
+		Agent agent = agentsService.getAgent(email);
+		if (agent == null || !agent.getKind().equals(type))
+			return "redirect:/userlogin?error";
+		try {
+			securityService.autoLogin(email, password);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "redirect:/userlogin?error";
+		}
+		return "redirect:/";
+	}
 	@RequestMapping(value = "/user", method = RequestMethod.POST, headers = { "Accept=application/json",
 			"Accept=application/xml" }, produces = { "application/json", "text/xml" })
 	public ResponseEntity<RespuestaInfoREST> getPOSTpetition(@RequestBody(required = true) PeticionInfoREST peticion) {
@@ -150,18 +143,5 @@ public class AgentController {
 		return "datosAgent";
 	}
 
-	@RequestMapping(value = "/userlogin", method = RequestMethod.POST)
-	public String loginPost(@RequestParam String email, @RequestParam String password, @RequestParam String type) {
-		Agent agent = agentsService.getAgent(email);
-		System.out.println(!agent.getKind().equals(type));
-		if (agent == null || !agent.getKind().equals(type))
-			return "redirect:/login?error";
-		try {
-			securityService.autoLogin(email, password);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return "redirect:/login?error";
-		}
-		return "redirect:/";
-	}
+	
 }

@@ -24,12 +24,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
 		.antMatchers("/mark/delete/*").hasAuthority("ROLE_PROFESOR")
 		.antMatchers("/mark/**").hasAnyAuthority("ROLE_STUDENT","ROLE_PROFESOR","ROLE_ADMIN")
 		.antMatchers("/user/**").hasAnyAuthority("ROLE_ADMIN")
-		.antMatchers("/userlogin").permitAll()
 		.anyRequest().authenticated() 
-		.and() 
-		//.formLogin() 
-		//.loginPage("/userlogin").permitAll().defaultSuccessUrl("/")
-		//.and()
+		.and()
 		.logout()
 		.permitAll();
 	}
