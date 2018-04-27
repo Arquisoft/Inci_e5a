@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/head">
+<meta charset="UTF-8" />
+<title>Perfil</title>
+</head>
+<body>
+	<nav th:replace="fragments/nav"></nav>
+	<h1>Actualizar perfil</h1>
+	<form method="POST"
+		action="/profile/cambiarContraseña">
+		<table>
+			<tr>
+			
+
+                
+			<td><input type="text" name="email" /></td>
+			</tr>
+			<tr>
+				<td><label for="password">Nueva
+							Contraseña: </label></td>
+
+				<td><input type="password" name="password" /></td>
+			</tr>
+
+			<tr>
+				<td colspan="2"><input type="submit" name="cambiar"
+					value="Cambiar Contraseña" /></td>
+			</tr>
+
+			</table>
+	</form>
+	<footer th:replace="fragments/footer"></footer>
+</body>
+</html>

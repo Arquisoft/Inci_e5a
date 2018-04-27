@@ -15,34 +15,6 @@ public class AgentsService {
 	AgentRepository repository;
 	
 	/**
-	 * Método que permite la actualización de la contraseña del Agente
-	 * Se comprueba que las contraseñas no estén vacías, sean distintas y 
-	 * la actual coincida con la del agente
-	 */
-	public void updatePassword(Agent agent, String password, String newPassword) {
-		
-		if (password != null && newPassword != null && !(password.equals(newPassword))
-				&& agent.getPassword().equals(password)) {
-			agent.setPassword(newPassword);
-			this.repository.save(agent);
-		}
-		
-	}
-
-	/**
-	 * Método que permite la actualización del email del Participante
-	 * Se comprueba que el email no esté vacío
-	 */
-	
-	public void updateEmail(Agent agent, String email) {
-		if(email != null){
-			agent.setEmail(email);
-			this.repository.save(agent);
-		}
-	}
-
-	
-	/**
 	 * Método que devuelve el Agente buscado por email
 	 * Hace uso del método findByEmail (mapeador)
 	 */
@@ -50,5 +22,11 @@ public class AgentsService {
 		
 		return this.repository.findByEmail(email);
 	}
+
+	public void cambiarUsuario(Agent agente) {
+		repository.save(agente);
+	}
+	
+	
 	
 }
