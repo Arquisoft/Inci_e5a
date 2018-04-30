@@ -2,45 +2,45 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace = "fragments/head">
-<meta charset="UTF-8" />
-<title>Enviar Incidencias</title>
+	<meta charset="UTF-8" />
+	<title>Enviar Incidencias</title>
 </head>
-<body>
-	<nav th:replace = "fragments/nav"></nav>
-	<h1>Enviar incidencia</h1>
-	<form method="POST" action="/incidence/add">
-		<table>
-			<tr>
-				<td><strong><label for="username">Usuario: </label></strong></td>
-				<td><input type="text" name="username" /></td>
-			</tr>
-			<tr>
-				<td><strong><label for="password">Contraseña:
-					</label></strong></td>
 
-				<td><input type="password" name="password" /></td>
-			</tr>
-			<tr>
-				<td><strong><label for="name">Nombre de la
+<body>
+	<nav th:replace = "fragments/nav"/>
+	<div class="container">
+	<h2>Enviar incidencia</h2>
+	<form class="navbar-form" method="POST" action="/incidence/add">
+		<div class="table-responsive">
+			<table class="table table-hover">
+				<tr>
+					<td><strong><label for="email">Usuario: </label></strong></td>
+					<td th:text="${agent.email}" name="email"></td>
+				</tr>
+				
+				<tr>
+					<td><strong><label for="name">Nombre de la
 							incidencia: </label></strong></td>
-				<td><input type="text" name="name" /></td>
-			</tr>
-			<tr>
-				<td><strong><label for="name">Descripcion: </label></strong></td>
-				<td><input type="text" name="description" /></td>
-			</tr>
-			<tr>
-				<td><strong><label for="tags">Etiquetas: </label></strong></td>
-				<td><input type="text" name="tags" /></td>
-			</tr>
-			  <span th:if="${param.error}" class="text-danger">ERROR</span>
-			<tr>
+					<td><input type="text" name="name" /></td>
+				</tr>
+				<tr>
+					<td><strong><label for="descripcion">Descripcion: </label></strong></td>
+					<td><input type="text" name="description" /></td>
+				</tr>
+				<tr>
+					<td><strong><label for="tags">Etiquetas: </label></strong></td>
+					<td><input type="text" name="tags" /></td>
+				</tr>
+			  		<span th:if="${param.error}" class="text-danger">ERROR</span>
+				<tr>
 
 				<td colspan="2"><input type="submit" name="enviar"
 					value="Enviar Incidencia" /></td>
-			</tr>
-		</table>
+				</tr>
+			</table>
+		</div>
 	</form>
+	</div>
 	<footer th:replace = "fragments/footer"></footer>
 </body>
 </html>
