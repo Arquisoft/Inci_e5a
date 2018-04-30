@@ -8,9 +8,7 @@ import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 import javax.annotation.ManagedBean;
 
-/**
- * Created by on 26/12/16.
- */
+
 @ManagedBean
 public class KafkaProducer {
 
