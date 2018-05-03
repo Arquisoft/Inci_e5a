@@ -12,7 +12,7 @@ import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dada;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
-import inciDashboard_e5a.model.User;
+import asw.inciDashboard.inciDashboard_e5a.model.User;
 
 public class LoginAgentSteps {
 
