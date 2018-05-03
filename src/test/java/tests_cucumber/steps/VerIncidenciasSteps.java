@@ -2,10 +2,8 @@ package tests_cucumber.steps;
 
 import java.util.List;
 
-import cucumber.api.java.es.Cuando;
+import asw.inciDashboard.inciDashboard_e5a.model.User;
 import cucumber.api.java.es.Dada;
-import cucumber.api.java.es.Entonces;
-import inciDashboard_e5a.model.User;
 
 public class VerIncidenciasSteps {
     

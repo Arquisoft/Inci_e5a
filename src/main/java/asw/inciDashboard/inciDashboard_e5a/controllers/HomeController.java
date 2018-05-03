@@ -1,4 +1,4 @@
-package inciDashboard_e5a.controllers;
+package asw.inciDashboard.inciDashboard_e5a.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

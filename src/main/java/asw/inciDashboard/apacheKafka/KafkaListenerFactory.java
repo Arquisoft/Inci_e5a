@@ -1,4 +1,4 @@
-package inciDashboard_e5a.apacheKafka;
+package asw.inciDashboard.apacheKafka;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;

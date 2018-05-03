@@ -1,7 +1,7 @@
-package inciDashboard_e5a.services;
+package asw.inciDashboard.inciDashboard_e5a.services;
 
-import inciDashboard_e5a.model.User;
-import inciDashboard_e5a.repositories.UsersRepository;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -10,7 +10,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import java.util.*;
+
+import asw.inciDashboard.inciDashboard_e5a.model.User;
+import asw.inciDashboard.inciDashboard_e5a.repositories.UsersRepository;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {

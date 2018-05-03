@@ -1,15 +1,11 @@
 package tests_cucumber.steps;
 
-import java.util.List;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 import cucumber.api.java.es.Cuando;
-import cucumber.api.java.es.Dada;
 import cucumber.api.java.es.Entonces;
-import inciDashboard_e5a.model.User;
+import scala.util.control.Exception.By;
 
 public class LoginAdminSteps {
 
