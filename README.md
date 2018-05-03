@@ -1,9 +1,9 @@
-# InciManagement_e5a
-InciManagement
+# Inci_e5a
+Inci
 
+[![Build Status](https://travis-ci.org/Arquisoft/Inci_e5a.svg?branch=master)](https://travis-ci.org/Arquisoft/Inci_e5a)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c77c11b6a34b46c4bc6b299e15976f2d)](https://www.codacy.com/app/jelabra/InciManager_e5a?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Arquisoft/Agents_e5a&amp;utm_campaign=Badge_Grade)
-[![Build Status](https://travis-ci.org/Arquisoft/InciManager_e5a.svg?branch=master)](https://travis-ci.org/Arquisoft/InciManager_e5a)
-[![codecov](https://codecov.io/gh/Arquisoft/InciManager_e5a/branch/master/graph/badge.svg)](https://codecov.io/gh/Arquisoft/InciManager_e5a)
+[![codecov](https://codecov.io/gh/Arquisoft/Inci_e5a/branch/master/graph/badge.svg)](https://codecov.io/gh/Arquisoft/Inci_e5a)
 
 AUTORES:
 
