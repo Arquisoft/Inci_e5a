@@ -2,7 +2,7 @@
 Feature: Enviamos una incidencia
 	
 	Escenario: Enviamos una nueva incidencia rellenando una serie de campos
-		Dado: la incidencia recogida por el agente loggeado 
+		Dado: la incidencia recogida por un agente loggrado
 			Y: y con nombre 'Averia1'
 			Y: y descripcion 'Perdida de agua de la labadora'
 			Y: y etiquetas 'averia, agua'
