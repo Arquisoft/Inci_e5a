@@ -1,5 +1,7 @@
-package asw.cucumber.steps;
+package cucumber_manager.steps;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import asw.inciManager.inciManager_e5a.entities.Agent;
@@ -10,31 +12,40 @@ import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
 
 public class AgentsStep {
+	
+	private WebDriver driver = null;
+	private String url = "http://localhost:8090/";
 
     @Autowired
     AgentsService agentsService;
     private String user, password, type;
 
     @Dado("^el email del agente es \"([^\"]*)\"$")
-    public void email(String usuarioAgente) {
-	this.user = usuarioAgente;
-	System.out.println("El usuario del agente es " + usuarioAgente);
+    public void email(String user) {
+	this.user = user;
+	System.out.println("El usuario del agente es " + user);
     }
 
     @Y("^su contraseña es \"([^\"]*)\"$")
-    public void su_contraseña(String contraseña) {
-	this.password = contraseña;
-	System.out.println("La contraseña del agente es " + contraseña);
+    public void su_contraseña(String password) {
+	this.password = password;
+	System.out.println("La contraseña del agente es " + password);
     }
 
     @Y("^su tipo es \"([^\"]*)\"$")
-    public void su_tipo(String tipo) {
-	this.type = tipo;
-	System.out.println("El tipo del agente es " + tipo);
+    public void su_tipo(String type) {
+	this.type = type;
+	System.out.println("El tipo del agente es " + type);
     }
 
     @Cuando("^el agente los introduce en el formulario$")
     public void agente_introduce_datos_formulario() {
+    url = "http://localhost:8090/...................";
+    driver.get(url);
+    driver.navigate().to(url);
+    driver.findElement(By.id("email")).sendKeys(user);
+    driver.findElement(By.id("password")).sendKeys(password);
+    driver.findElement(By.id("kind")).sendKeys(type);
 	System.out.println("El agente introduce sus datos en el formulario");
     }
 

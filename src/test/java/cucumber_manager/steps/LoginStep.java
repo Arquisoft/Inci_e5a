@@ -1,4 +1,4 @@
-package asw.cucumber.steps;
+package cucumber_manager.steps;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

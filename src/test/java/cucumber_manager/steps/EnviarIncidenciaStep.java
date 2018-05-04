@@ -1,4 +1,4 @@
-package asw.cucumber.steps;
+package cucumber_manager.steps;
 
 import java.util.Arrays;
 
