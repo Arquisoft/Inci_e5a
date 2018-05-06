@@ -8,8 +8,11 @@ Inci
 Este proyecto se compone de 4 módulos estructurados de la siguiente manera:
 
 **AGENTS**: [https://github.com/Arquisoft/Agents_e5a]
+
 **LOADER**: [https://github.com/Arquisoft/Loader_e5a]
+
 **INCIMANAGER**: [https://github.com/Arquisoft/InciManager_e5a]
+
 **INCIDASHBOARD**: [https://github.com/Arquisoft/InciDashboard_e5a]
 
 # Autores
