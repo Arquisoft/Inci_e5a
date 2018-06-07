@@ -16,7 +16,6 @@ public class SecurityService {
 
 	public String findLoggedInDni() 
 	{
-			System.out.println("Entra en el metodo findlogged");
 			Object userDetails = SecurityContextHolder.getContext().getAuthentication().getDetails();
 			if (userDetails instanceof UserDetails) {
 					return ((UserDetails) userDetails).getUsername();
@@ -27,7 +26,6 @@ public class SecurityService {
 	public void autoLogin(String email, String password) 
 	{
 		UsernamePasswordAuthenticationToken aToken = new UsernamePasswordAuthenticationToken(email, password);
-		System.out.println(aToken);
 		Authentication a= authenticationManager.authenticate(aToken);
 		if (a.isAuthenticated()) {
 			SecurityContextHolder.getContext().setAuthentication(aToken);

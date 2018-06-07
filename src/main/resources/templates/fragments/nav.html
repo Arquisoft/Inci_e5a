@@ -13,7 +13,6 @@
 				<li><a href="/">Home</a></li>
 				<li sec:authorize="isAuthenticated()"><a href="/profile">Mi perfil</a></li>
 				<li sec:authorize="isAuthenticated()"><a href="/sendIncidence">Crear incidencia</a></li>
-				<li id="incidencesList"><a href="/listIncidences">See incidences</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown" sec:authorize="!isAuthenticated()"><a
