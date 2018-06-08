@@ -21,15 +21,15 @@
 				<tr>
 					<td><strong><label for="name">Nombre de la
 							incidencia: </label></strong></td>
-					<td><input id="name" type="text" name="name" /></td>
+					<td><input id="name" type="text" name="name" required="true"/></td>
 				</tr>
 				<tr>
 					<td><strong><label for="description">Descripcion: </label></strong></td>
-					<td><input id=description" type="text" name="description" /></td>
+					<td><input id=description" type="text" name="description" required="true"/></td>
 				</tr>
 				<tr>
 					<td><strong><label for="tags">Etiquetas: </label></strong></td>
-					<td><input id="tags" type="text" name="tags" /></td>
+					<td><input id="tags" type="text" name="tags" required="true"/></td>
 				</tr>
 			  		<span th:if="${param.error}" class="text-danger">ERROR</span>
 				<tr>

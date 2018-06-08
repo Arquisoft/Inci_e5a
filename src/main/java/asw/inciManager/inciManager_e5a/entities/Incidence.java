@@ -4,13 +4,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-
+@Document(collection = "incidencias")
 public class Incidence {
 
-	@Id
-	private int id;
+
 	private String indicenceName, description,identificador;
 	
 	private Agent agent;
@@ -33,10 +32,6 @@ public class Incidence {
 		this.agent=agent;
 		this.date=new Date();
 		this.tags = tags;
-	}
-
-	public int getId() {
-		return id;
 	}
 
 	public String getIndicenceName() {
