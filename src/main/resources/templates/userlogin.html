@@ -33,6 +33,8 @@
 				</div>
 			</div>
 		</form>
+		<span class="text-danger" th:if="${param.error}"
+			th:text="#{Error.login}"/>
 	</div>
 	<footer th:replace="fragments/footer" />
 </body>
