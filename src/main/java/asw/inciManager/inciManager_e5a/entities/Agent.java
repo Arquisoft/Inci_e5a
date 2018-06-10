@@ -2,42 +2,20 @@ package asw.inciManager.inciManager_e5a.entities;
 
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "Agent")
+@Document(collection = "agentes")
 public class Agent {
 
-	// Id generado automáticamente para diferenciar cada uno (para mapear)
-	@Id
-	@GeneratedValue
-	private Long id;
-
-	// Atributos del agent
 	private String nombre;
 	private String password;
-	@Column(unique = true)
 	private String email;
 	private String ubicacion;
 	private String identificador;
 	private String kind;
 	private int kindCode;
 	
-	@OneToMany(mappedBy="agent")
 	private List<Incidence> listaIncidencias;
-	
-
-
-	/**
-	 * Constructor vacío (ya que es para mapear)
-	 */
-	Agent() {
-	}
 
 	/**
 	 * Constructor
@@ -49,6 +27,11 @@ public class Agent {
 	 * @param kind
 	 * @param kindCode
 	 */
+	
+	public Agent()
+	{
+		
+	}
 	public Agent(String nombre, String password, String email, String identificador, String ubicacion,
 			String kind, int kindCode) {
 		super();
@@ -60,9 +43,12 @@ public class Agent {
 		this.kind = kind;
 		this.kindCode = kindCode;
 	}
-
-	public Long getId() {
-		return id;
+	
+	public Agent(String nombre, String kind, int kindCode) {
+		super();
+		this.nombre = nombre;
+		this.kind = kind;
+		this.kindCode = kindCode;
 	}
 
 	public String getNombre() {
@@ -78,8 +64,6 @@ public class Agent {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-
 
 	public String getEmail() {
 		return email;
@@ -131,36 +115,12 @@ public class Agent {
 	}
 
 	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Agent other = (Agent) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
-	}
-
-	@Override
 	public String toString() {
-		return "Agent [id=" + id + ", nombre=" + nombre + ", password=" + password + ", email=" + email
+		return "Agent [nombre=" + nombre + ", email=" + email
 				+ ", ubicacion=" + ubicacion + ", identificador=" + identificador + ", kind=" + kind + ", kindCode="
 				+ kindCode + "]";
 	}
+	
 
 	
 
