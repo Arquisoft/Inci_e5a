@@ -25,7 +25,7 @@ public class EnviarIncidenciaStep {
     private String descripcionIncidencia;
     private String etiquitasIncidencia;
 
-    @Dado("^La incidencia recogida por un agente loggeado$")
+    /*@Dado("^La incidencia recogida por un agente loggeado$")
     public void la_incidencia_con_agente_loggeado() throws Throwable {
 
 	driver = new HtmlUnitDriver();
@@ -76,6 +76,6 @@ public class EnviarIncidenciaStep {
     @Entonces("^se envia la incidencia correctamente$")
     public void se_envia_la_incidencia() {
 	System.out.println("Se envía la incidencia correctamente");
-    }
+    }*/
 
 }

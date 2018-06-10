@@ -20,7 +20,7 @@ public class AgentsStep {
     AgentsService agentsService;
     private String user, password, type;
 
-    @Dado("^el email del agente es \"([^\"]*)\"$")
+    /*@Dado("^el email del agente es \"([^\"]*)\"$")
     public void email(String user) {
 	this.user = user;
 	System.out.println("El usuario del agente es " + user);
@@ -66,6 +66,6 @@ public class AgentsStep {
 	    System.out.println("Se obtienen correctamente los datos del agente");
 	else
 	    System.out.println("Error al obtener los datos del agente");
-    }
+    }*/
 
 }
