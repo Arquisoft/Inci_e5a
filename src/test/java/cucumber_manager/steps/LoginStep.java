@@ -25,14 +25,14 @@ public class LoginStep {
 	  
     
 
-    @Dado("^El agente con email \"([^\"]*)\"$")
+    /*@Dado("^El agente con email \"([^\"]*)\"$")
     public void el_agente_con_email(String agenteEmail) throws Throwable {
     this.agenteEmail = agenteEmail;
     System.out.println("El email del agente es: " + agenteEmail);
-    }
+    }*/
     
 
-    @Y("^Contraseña del angente \"([^\"]*)\"$")
+    /*@Y("^Contraseña del angente \"([^\"]*)\"$")
     public void contraseña_del_agente(String agenteContraseña) throws Throwable {
         this.agenteContraseña = agenteContraseña;
     	System.out.println("La contraseña del agente es: " + agenteContraseña);
@@ -70,6 +70,6 @@ public class LoginStep {
 	    System.out.println("Se ha iniciado sesión correctamente");
 	else
 	    System.out.println("No se ha iniciado sesión");
-    }
+    }*/
 
 }
