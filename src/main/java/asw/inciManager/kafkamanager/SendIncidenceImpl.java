@@ -11,7 +11,7 @@ public class SendIncidenceImpl implements SendIncidence{
 	
 	@Autowired
 	KafkaProducer kafkaProducer;
-	private final static String TOPIC = "Incidencia";
+	private final static String TOPIC = "ah6nubsh-Incidencia";
 
 	@Override
 	public String createMessage(Incidence incidence) {
