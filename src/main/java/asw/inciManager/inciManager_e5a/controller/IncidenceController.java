@@ -18,6 +18,7 @@ import asw.inciManager.inciManager_e5a.entities.Agent;
 import asw.inciManager.inciManager_e5a.entities.Incidence;
 import asw.inciManager.inciManager_e5a.services.AgentsService;
 import asw.inciManager.inciManager_e5a.services.IncidenceService;
+import asw.inciManager.kafkamanager.producers.KafkaProducer;
 
 @Controller
 public class IncidenceController {
@@ -27,6 +28,9 @@ public class IncidenceController {
 
 	@Autowired
 	private AgentsService agentsService;
+	
+	@Autowired
+	private KafkaProducer kafkaProducer;
 	
 	private SecureRandom random = new SecureRandom();
 
@@ -49,6 +53,7 @@ public class IncidenceController {
 		Agent agent = agentsService.getAgent(agente.getName());
 		String identificador = nextId();
 		Incidence incidence = new Incidence(identificador, name, description, agent, obtainTagsList(tags));
+		kafkaProducer.send(incidence.toString());
 		incidenceService.saveIncidence(incidence);
 		return "redirect:/incidenceSent";
 	}
