@@ -2,7 +2,6 @@ package asw.inciManager.kafkamanager.producers;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
@@ -16,18 +15,18 @@ public class KafkaProducer {
     private static final Logger logger = Logger.getLogger(KafkaProducer.class);
 
     @Autowired
-    private KafkaTemplate<String, Object> kafkaTemplate;
+    private KafkaTemplate<String, String> kafkaTemplate;
     
-    @Value("${cloudkarafka.topic}")
-    private String topic;
+    
+    private String topic="Incidencias";
 
     public void send(String data) 
     {
  
-        ListenableFuture<SendResult<String, Object>> future = kafkaTemplate.send(topic, data);
-        future.addCallback(new ListenableFutureCallback<SendResult<String, Object>>() {
+        ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topic, data);
+        future.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
             @Override
-            public void onSuccess(SendResult<String, Object> result) {
+            public void onSuccess(SendResult<String, String> result) {
                 logger.info("Success on sending message \""+data + "\" to topic " + topic);
             }
 
