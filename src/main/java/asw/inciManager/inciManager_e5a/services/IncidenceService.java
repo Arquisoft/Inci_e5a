@@ -20,7 +20,7 @@ public class IncidenceService {
 	
 	public void addIncidence(Incidence incidence) {
 		incidenceRepository.save(incidence);
-		kafkaProducer.send("gygw6fys-Incidencias",incidence.toString());
+		kafkaProducer.send("gygw6fys-Incidencias",incidence.toJSON());
 	}
 	
 	public Incidence getIncidenceById(Long id)

@@ -57,6 +57,23 @@ public class Incidence {
 	public void setStatus(IncidenceStatus status) {
 		this.status = status;
 	}
+	
+	public String toJSON() {
+		return "{ \"identifier\" : " + identificador + ", "
+			+ " \"name\" : " + indicenceName + ", "
+			+ " \"description\" : " + description + ", "
+			+ " \"date\" : " + date + ", "
+			+ " \"status\" : " + status + ", "
+			+ " \"agent\" : " + agent.getNombre() + ", "
+			+ " \"tags\" : [" + tagsList() + "]} ";
+	}
+	
+	private String tagsList() {
+		String list = "";
+		for(int i = 0; i < tags.size(); i++) 
+			list += tags.get(i) + ((i == tags.size() - 1) ? "" : ", ");
+		return list;
+	}
 
 	@Override
 	public String toString() {
