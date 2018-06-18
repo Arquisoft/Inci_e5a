@@ -1,8 +1,6 @@
 package asw.inciManager.inciManager_e5a.controller;
 
-import java.math.BigInteger;
 import java.security.Principal;
-import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -27,8 +25,6 @@ public class IncidenceController {
 
 	@Autowired
 	private AgentsService agentsService;
-	
-	private SecureRandom random = new SecureRandom();
 
 	@RequestMapping(value = "/sendIncidence", method = RequestMethod.GET)
 	public String createIncidenceGet(Principal agente, Model model) {
@@ -47,8 +43,7 @@ public class IncidenceController {
 	public String createIncidence(Principal agente, @RequestParam String name, @RequestParam String description,  @RequestParam String tags) 
 	{
 		Agent agent = agentsService.getAgent(agente.getName());
-		String identificador = nextId();
-		Incidence incidence = new Incidence(identificador, name, description, agent, obtainTagsList(tags));
+		Incidence incidence = new Incidence(name, description, agent, obtainTagsList(tags));
 		incidenceService.addIncidence(incidence);
 		return "redirect:/incidenceSent";
 	}
@@ -60,9 +55,5 @@ public class IncidenceController {
 			etiquetas.add(x.toLowerCase());
 		});
 		return etiquetas;
-	}
-
-	private String nextId() {
-		return new BigInteger(130, random).toString(32);
 	}
 }

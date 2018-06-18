@@ -4,13 +4,18 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "incidencias")
 public class Incidence {
 
 
-	private String indicenceName, description,identificador;
+	@Id
+	private ObjectId _id;
+	
+	private String name, description;
 	
 	private Agent agent;
 
@@ -21,10 +26,8 @@ public class Incidence {
 	
 	private Map<String, String> properties;
 	
-	public Incidence(String identificador, String name, String description, Agent agent, List<String> tags) {
-		
-		this.identificador = identificador;
-		this.indicenceName = name;
+	public Incidence(String name, String description, Agent agent, List<String> tags) {
+		this.name = name;
 		this.description = description;
 		this.tags=tags;
 		this.date = new Date();
@@ -34,8 +37,8 @@ public class Incidence {
 		this.tags = tags;
 	}
 
-	public String getIndicenceName() {
-		return indicenceName;
+	public String getName() {
+		return name;
 	}
 
 	public String getDescription() {
@@ -59,8 +62,8 @@ public class Incidence {
 	}
 	
 	public String toJSON() {
-		return "{ \"identifier\" : \"" + identificador + "\", "
-			+ " \"name\" : \"" + indicenceName + "\", "
+		return "{ \"_id\" : \"" + _id + "\", "
+			+ " \"name\" : \"" + name + "\", "
 			+ " \"description\" : \"" + description + "\", "
 			+ " \"date\" : \"" + date + "\", "
 			+ " \"status\" : \"" + status + "\", "
@@ -77,16 +80,16 @@ public class Incidence {
 
 	@Override
 	public String toString() {
-		return "Incidence [id=" + identificador + "#user=" + agent.getNombre() + "#indicenceName=" + indicenceName
+		return "Incidence [id=" + _id + "#user=" + agent.getNombre() + "#indicenceName=" + name
 				+ "#description=" + description + "#tags=<" + tags + ">]";
 	}
 
-	public String getIdentificador() {
-		return identificador;
+	public ObjectId getId() {
+		return _id;
 	}
 
-	public void setIdentificador(String identificador) {
-		this.identificador = identificador;
+	public void setIdentificador(ObjectId id) {
+		this._id = id;
 	}
 
 	public Date getDate() {

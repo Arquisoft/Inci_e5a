@@ -1,6 +1,7 @@
 package asw.inciManager.inciManager_e5a.services;
 
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +24,7 @@ public class IncidenceService {
 		kafkaProducer.send("gygw6fys-Incidencias",incidence.toJSON());
 	}
 	
-	public Incidence getIncidenceById(Long id)
+	public Incidence getIncidenceById(ObjectId id)
 	{
 		return incidenceRepository.findOne(id);
 	}
