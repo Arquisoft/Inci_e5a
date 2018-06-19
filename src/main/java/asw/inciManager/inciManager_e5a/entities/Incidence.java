@@ -26,7 +26,17 @@ public class Incidence {
 	
 	private Map<String, String> properties;
 	
-	public Incidence(String name, String description, Agent agent, List<String> tags) {
+	//Implementacion de notificaciones valores peligrosos
+	
+	private TipoIncidencia type;
+	
+	private Double valor;
+	
+
+	
+	
+	
+	public Incidence(String name, String description, Agent agent, List<String> tags, TipoIncidencia tipo, Double valor) {
 		this.name = name;
 		this.description = description;
 		this.tags=tags;
@@ -35,7 +45,36 @@ public class Incidence {
 		this.agent=agent;
 		this.date=new Date();
 		this.tags = tags;
+		this.type = TipoIncidencia.SENSOR_TEMPERATURA;
+		this.valor = valor;
+				
 	}
+	
+	
+
+	public TipoIncidencia getTipo() {
+		return type;
+	}
+
+
+
+	public void setTipo(TipoIncidencia tipo) {
+		this.type = tipo;
+	}
+	
+
+
+	public Double getValor() {
+		return valor;
+	}
+
+
+
+	public void setValor(Double valor) {
+		this.valor = valor;
+	}
+
+
 
 	public String getName() {
 		return name;
@@ -68,7 +107,11 @@ public class Incidence {
 			+ " \"date\" : \"" + date + "\", "
 			+ " \"status\" : \"" + status + "\", "
 			+ " \"agent\" : \"" + agent.getNombre() + "\", "
-			+ " \"tags\" : [" + tagsList() + "]} ";
+			+ " \"tags\" : [" + tagsList() + "]} "
+			+ " \"type\" : \"" + type + "\", "
+			+ " \"valor\" : \"" + valor + "\", ";
+
+ 
 	}
 	
 	private String tagsList() {
@@ -81,7 +124,7 @@ public class Incidence {
 	@Override
 	public String toString() {
 		return "Incidence [id=" + _id + "#user=" + agent.getNombre() + "#indicenceName=" + name
-				+ "#description=" + description + "#tags=<" + tags + ">]";
+				+ "#description=" + description + "#tags=<" + tags +  "#indicetype=" + type + "#indiceValor=" + valor +">]";
 	}
 
 	public ObjectId getId() {

@@ -5,15 +5,19 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import asw.inciManager.inciManager_e5a.entities.Agent;
 import asw.inciManager.inciManager_e5a.entities.Incidence;
+import asw.inciManager.inciManager_e5a.entities.TipoIncidencia;
 import asw.inciManager.inciManager_e5a.services.AgentsService;
 import asw.inciManager.inciManager_e5a.services.IncidenceService;
 
@@ -40,11 +44,16 @@ public class IncidenceController {
 	}
 
 	@RequestMapping(value = "/incidence/add", method = RequestMethod.POST)
-	public String createIncidence(Principal agente, @RequestParam String name, @RequestParam String description,  @RequestParam String tags) 
+	public String createIncidence(@Valid Incidence incidence, BindingResult br, Principal agente) 
 	{
+		if (br.hasErrors()) {
+			return "redirect:/incidenceSent?error=Datos no validos";
+		}
+		
 		Agent agent = agentsService.getAgent(agente.getName());
-		Incidence incidence = new Incidence(name, description, agent, obtainTagsList(tags));
-		incidenceService.addIncidence(incidence);
+		//Incidence incidence = new Incidence(name, description, agent, obtainTagsList(tags),tipo,valor);
+		
+		//incidenceService.addIncidence(incidence);
 		return "redirect:/incidenceSent";
 	}
 
