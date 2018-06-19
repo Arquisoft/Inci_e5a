@@ -1,11 +1,9 @@
 language: java
 jdk:
 - oraclejdk8
-
-script: "mvn cobertura:cobertura"
-
 after_success:
 - bash <(curl -s https://codecov.io/bash)
-
-codecov:
-  token: 91b2987c-e027-4d8a-ab39-558f5a00ae9c
+before_script:
+- "export DISPLAY=:99.0"
+- "sh -e /etc/init.d/xvfb start"
+- sleep 3 # give xvfb some time to start
