@@ -1,11 +1,18 @@
 #language: es
-Feature: Enviamos una incidencia
+
+Característica: Envío de una incidencia por parte de un agente
 	
-	Escenario: Enviamos una nueva incidencia rellenando una serie de campos
-		Dado: la incidencia recogida por un agente loggrado
-			Y: y con nombre 'Averia1'
-			Y: y descripcion 'Perdida de agua de la labadora'
-			Y: y etiquetas 'averia, agua'
-		Cuando introduzco los datos en el formulario
-			Y: presiono el boton de enviar incidencia
-		Entonces: se envia la incidencia correctamente 
+	Escenario: Iniciamos sesión con un usuario y enviamos una incidencia a través de Kafka
+
+		Dado el email del agente que va a enviar la incidencia 'miguel@uniovi.es'
+			Y su password 'Contra'
+			Y su tipo 'Persona'
+			
+		Dado la incidencia recogida por un agente loggeado
+			Y con nombre 'Averia1'
+			Y descripcion 'Perdida de agua de la labadora'
+			Y etiquetas 'averia, agua'
+
+		Cuando tratamos de enviar esa incidencia a través de Kafka
+
+		Entonces se envia la incidencia correctamente 
