@@ -1,5 +1,6 @@
 package asw.inciManager.inciManager_e5a.entities;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -11,70 +12,62 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "incidencias")
 public class Incidence {
 
-
+	public static final List<IncidenceStatus> estados = Arrays.asList(IncidenceStatus.values());
+	public static final List<TipoIncidencia> tipos = Arrays.asList(TipoIncidencia.values());
+	
 	@Id
 	private ObjectId _id;
-	
+
 	private String name, description;
-	
+
 	private Agent agent;
 
 	private Date date;
 	private IncidenceStatus status;
-	
-	private List<String> tags;
-	
-	private Map<String, String> properties;
-	
-	//Implementacion de notificaciones valores peligrosos
-	
-	private TipoIncidencia type;
-	
-	private Double valor;
-	
 
-	
-	
-	
-	public Incidence(String name, String description, Agent agent, List<String> tags, TipoIncidencia tipo, Double valor) {
+	private List<String> tags;
+
+	private Map<String, String> properties;
+
+	// Implementacion de notificaciones valores peligrosos
+
+	private TipoIncidencia type;
+
+	private Double valor;
+	private double latitud, longitud;
+
+	public Incidence(String name, String description, Agent agent, List<String> tags, TipoIncidencia tipo,
+			Double valor) {
 		this.name = name;
 		this.description = description;
-		this.tags=tags;
+		this.tags = tags;
 		this.date = new Date();
 		this.status = IncidenceStatus.OPENED;
-		this.agent=agent;
-		this.date=new Date();
+		this.agent = agent;
+		this.date = new Date();
 		this.tags = tags;
 		this.type = TipoIncidencia.SENSOR_TEMPERATURA;
 		this.valor = valor;
-				
+
 	}
 	
-	
+	public Incidence() {}
 
 	public TipoIncidencia getTipo() {
 		return type;
 	}
 
-
-
 	public void setTipo(TipoIncidencia tipo) {
 		this.type = tipo;
 	}
-	
-
 
 	public Double getValor() {
 		return valor;
 	}
 
-
-
 	public void setValor(Double valor) {
 		this.valor = valor;
 	}
-
-
 
 	public String getName() {
 		return name;
@@ -99,32 +92,35 @@ public class Incidence {
 	public void setStatus(IncidenceStatus status) {
 		this.status = status;
 	}
-	
-	public String toJSON() {
-		return "{ \"_id\" : \"" + _id + "\", "
-			+ " \"name\" : \"" + name + "\", "
-			+ " \"description\" : \"" + description + "\", "
-			+ " \"date\" : \"" + date + "\", "
-			+ " \"status\" : \"" + status + "\", "
-			+ " \"agent\" : \"" + agent.getNombre() + "\", "
-			+ " \"tags\" : [" + tagsList() + "]} "
-			+ " \"type\" : \"" + type + "\", "
-			+ " \"valor\" : \"" + valor + "\", ";
 
- 
+	public String toJSON() {
+		return "{ \"_id\" : \"" + _id + "\", " 
+				+ " \"name\" : \"" + name + "\", " 
+				+ " \"description\" : \""+ description + "\", " 
+				+ " \"date\" : \"" + date + "\", " 
+				+ " \"status\" : \"" + status + "\", "
+				+ " \"agent\" : \"" + agent.getNombre() + "\", " 
+				+ " \"tags\" : [" + tagsList() + "], "
+				+ " \"type\" : \"" + type + "\", " 
+				+ " \"valor\" : " + valor + ", "
+				+ " \"latitud\" : " + latitud + ", "
+				+ " \"longitud\" : " + longitud + "} ";
 	}
-	
+
 	private String tagsList() {
 		String list = "";
-		for(int i = 0; i < tags.size(); i++) 
-			list += "\"" + tags.get(i) + "\""+ ((i == tags.size() - 1) ? "" : ", ");
+		for (int i = 0; i < tags.size(); i++)
+			list += "\"" + tags.get(i) + "\"" + ((i == tags.size() - 1) ? "" : ", ");
 		return list;
 	}
 
+	
+
 	@Override
 	public String toString() {
-		return "Incidence [id=" + _id + "#user=" + agent.getNombre() + "#indicenceName=" + name
-				+ "#description=" + description + "#tags=<" + tags +  "#indicetype=" + type + "#indiceValor=" + valor +">]";
+		return "Incidence [_id=" + _id + ", name=" + name + ", description=" + description + ", agent=" + agent
+				+ ", date=" + date + ", status=" + status + ", tags=" + tags + ", properties=" + properties + ", type="
+				+ type + ", valor=" + valor + ", latitud=" + latitud + ", longitud=" + longitud + "]";
 	}
 
 	public ObjectId getId() {
@@ -137,6 +133,22 @@ public class Incidence {
 
 	public Date getDate() {
 		return date;
+	}
+
+	public double getLatitud() {
+		return latitud;
+	}
+
+	public void setLatitud(double latitud) {
+		this.latitud = latitud;
+	}
+
+	public double getLongitud() {
+		return longitud;
+	}
+
+	public void setLongitud(double longitud) {
+		this.longitud = longitud;
 	}
 
 }
