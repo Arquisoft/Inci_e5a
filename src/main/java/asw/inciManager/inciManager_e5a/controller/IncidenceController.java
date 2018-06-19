@@ -5,12 +5,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -44,16 +41,16 @@ public class IncidenceController {
 	}
 
 	@RequestMapping(value = "/incidence/add", method = RequestMethod.POST)
-	public String createIncidence(@Valid Incidence incidence, BindingResult br, Principal agente) 
+	public String createIncidence(@RequestParam String name, @RequestParam String description, @RequestParam String tags,
+			@RequestParam String tipos, @RequestParam String latitud, @RequestParam String longitud,@RequestParam String valores,Principal agente) 
 	{
-		if (br.hasErrors()) {
-			return "redirect:/incidenceSent?error=Datos no validos";
-		}
-		
 		Agent agent = agentsService.getAgent(agente.getName());
-		//Incidence incidence = new Incidence(name, description, agent, obtainTagsList(tags),tipo,valor);
-		
-		//incidenceService.addIncidence(incidence);
+		TipoIncidencia tipoI = Incidence.tipos.stream().filter(x -> x.toString().equals(tipos)).findFirst().get();
+		double valor = Double.parseDouble(valores);
+		Incidence incidence = new Incidence(name, description, agent, obtainTagsList(tags), tipoI, valor);
+		incidence.setLatitud(Double.parseDouble(latitud));
+		incidence.setLongitud(Double.parseDouble(longitud));
+		incidenceService.addIncidence(incidence);
 		return "redirect:/incidenceSent";
 	}
 

@@ -43,6 +43,16 @@
 					</td>
 				</tr>
 				<tr>
+					<td><strong><label for="latitud">Latitud:</label></strong></td>
+					<td>
+						<input type="number" step="any" name="latitud" id="latitud" required="false"/>
+					</td>
+					<td><strong><label for="longitud">Longitud:</label></strong></td>
+					<td>
+						<input type="number" step="any" name="longitud" id="longitud" required="false"/>
+					</td>
+				</tr>
+				<tr>
 					<td><strong><label for="valor">Valores: </label></strong></td>
 					<td><input id="valores" type="text" name="valores" required="true"/></td>
 				</tr>
@@ -55,6 +65,19 @@
 			</table>
 		</div>
 	</form>
+	<script>
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(function(pos) {
+				document.getElementById("latitud").value = pos.coords.latitude;
+				document.getElementById("longitud").value = pos.coords.longitude;
+			} , function(err) {
+				console.log("error en la geolocalizacion");
+			}, {
+			maximumAge: 75000,
+			timeout: 15000
+		});
+		} else console.log("navegador no soporta geolocalizacion");
+	</script>
 	</div>
 	<footer th:replace = "fragments/footer"></footer>
 </body>
