@@ -77,6 +77,11 @@
 		</dependency>
 		
 		<!-- dependencia para JSON -->
+		
+		<dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+    </dependency>
 
 		<dependency>
 			<groupId>com.jayway.jsonpath</groupId>
