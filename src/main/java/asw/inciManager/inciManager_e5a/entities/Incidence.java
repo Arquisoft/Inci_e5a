@@ -46,7 +46,7 @@ public class Incidence {
 		this.agent = agent;
 		this.date = new Date();
 		this.tags = tags;
-		this.type = TipoIncidencia.SENSOR_TEMPERATURA;
+		this.type = tipo;
 		this.valor = valor;
 
 	}
