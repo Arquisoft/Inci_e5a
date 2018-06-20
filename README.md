@@ -13,18 +13,14 @@ Este proyecto se compone de 4 módulos estructurados de la siguiente manera:
 
 **INCIMANAGER**: [https://github.com/Arquisoft/InciManager_e5a]
 
-**INCIDASHBOARD**: [https://github.com/Arquisoft/InciDashboard_e5a]
+**INCIDASHBOARD**: [https://github.com/Arquisoft/Inci_e5c]
 
 # Autores
 
-Tania Álvarez Díaz (UO244856)
+-Álvaro Manuel Camporro Ayala (UO251562)
 
-Daniel Bermejo Blanco (UO204115)
+-Miguel Villademoros García (UO251836)
 
-Alvaro Manuel Camporro Ayala (UO251562)
+-Guillermo Diaz Perez (UO251387)
 
-Miguel Villademoros García (UO251836)
-
-Guillermo Diaz Perez (UO251387)
-
-Jesús Fdez Velasco (UO250914)
+-Jesús Fdez Velasco (UO250914)
