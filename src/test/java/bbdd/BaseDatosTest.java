@@ -73,7 +73,7 @@ public class BaseDatosTest
 		Incidence inci2=new Incidence();
 		inci2.setName("Problema eléctrico");
 		inci2.setAgente(agente);
-		inciService.saveIncidence(inci2);
+		inciRepository.save(inci2);
 		assertEquals(2, inciRepository.findByAgentIdentificador("M2").size()+inciRepository.findByAgentIdentificador("M3").size());
 		inciRepository.delete(inci2);
 	}
