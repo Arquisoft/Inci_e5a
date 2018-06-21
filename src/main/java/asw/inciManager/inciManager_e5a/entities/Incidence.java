@@ -53,6 +53,16 @@ public class Incidence {
 	
 	public Incidence() {}
 
+	public Agent getAgente()
+	{
+		return agent;
+	}
+	
+	public void setAgente(Agent agente)
+	{
+		this.agent=agente;
+	}
+	
 	public TipoIncidencia getTipo() {
 		return type;
 	}
@@ -149,6 +159,11 @@ public class Incidence {
 
 	public void setLongitud(double longitud) {
 		this.longitud = longitud;
+	}
+
+	public void setName(String name) 
+	{
+		this.name=name;
 	}
 
 }

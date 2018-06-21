@@ -55,7 +55,10 @@ public class Agent {
 		return nombre;
 	}
 
-
+	public void setNombre(String nombre)
+	{
+		this.nombre=nombre;
+	}
 
 	public String getPassword() {
 		return password;

@@ -1,6 +1,8 @@
 package asw.inciManager.inciManager_e5a.services;
 
 
+import java.util.List;
+
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +29,11 @@ public class IncidenceService {
 	public Incidence getIncidenceById(ObjectId id)
 	{
 		return incidenceRepository.findOne(id);
+	}
+	
+	public List<Incidence> getIncidencesByAgentId(String id)
+	{
+		return incidenceRepository.findByAgentIdentificador(id);
 	}
 	
 	public Incidence saveIncidence (Incidence incidence)
