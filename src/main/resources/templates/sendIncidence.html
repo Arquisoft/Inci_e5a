@@ -35,7 +35,7 @@
 					<td><strong><label for="tipos">Tipo sensor: </label></strong></td>
 					<td>
 						<select name="tipos" id="tipos" required="true">
-							<option th:each="tipo : ${T(asw.inciManager.inciManager_e5a.entities.TipoIncidencia).values()}"
+							<option th:each="tipo : ${T(uo.asw.entities.TipoIncidencia).values()}"
           						th:value="${tipo}" 
           						th:text="${tipo}">
    							</option>

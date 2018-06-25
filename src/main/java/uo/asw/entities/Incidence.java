@@ -18,7 +18,7 @@ public class Incidence {
 	@Id
 	private ObjectId _id;
 
-	private String name, description,agent;
+	private String name, description, emailAgente;
 
 	private Date date;
 	private IncidenceStatus status;
@@ -41,7 +41,7 @@ public class Incidence {
 		this.tags = tags;
 		this.date = new Date();
 		this.status = IncidenceStatus.OPENED;
-		this.agent = agent;
+		this.emailAgente = agent;
 		this.date = new Date();
 		this.tags = tags;
 		this.type = tipo;
@@ -53,12 +53,12 @@ public class Incidence {
 
 	public String getAgente()
 	{
-		return agent;
+		return emailAgente;
 	}
 	
 	public void setAgente(String agente)
 	{
-		this.agent=agente;
+		this.emailAgente=agente;
 	}
 	
 	public TipoIncidencia getTipo() {
@@ -107,7 +107,7 @@ public class Incidence {
 				+ " \"description\" : \""+ description + "\", " 
 				+ " \"date\" : \"" + date + "\", " 
 				+ " \"status\" : \"" + status + "\", "
-				+ " \"agent\" : \"" + agent + "\", " 
+				+ " \"agent\" : \"" + emailAgente + "\", " 
 				+ " \"tags\" : [" + tagsList() + "], "
 				+ " \"type\" : \"" + type + "\", " 
 				+ " \"valor\" : " + valor + ", "
@@ -126,7 +126,7 @@ public class Incidence {
 
 	@Override
 	public String toString() {
-		return "Incidence [_id=" + _id + ", name=" + name + ", description=" + description + ", agent=" + agent
+		return "Incidence [_id=" + _id + ", name=" + name + ", description=" + description + ", agent=" + emailAgente
 				+ ", date=" + date + ", status=" + status + ", tags=" + tags + ", properties=" + properties + ", type="
 				+ type + ", valor=" + valor + ", latitud=" + latitud + ", longitud=" + longitud + "]";
 	}

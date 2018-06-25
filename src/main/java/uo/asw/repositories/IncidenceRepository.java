@@ -10,7 +10,7 @@ import uo.asw.entities.Incidence;
 
 public interface IncidenceRepository extends MongoRepository<Incidence, ObjectId> {
 
-	List<Incidence> findByAgentIdentificador(String id);
+	List<Incidence> findByEmailAgente(String email);
 
 	
 	

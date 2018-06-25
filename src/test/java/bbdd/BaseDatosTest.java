@@ -51,7 +51,7 @@ public class BaseDatosTest
 	public void testExistencia()
 	{
 		assertEquals(inci.getId(), inciService.getIncidenceById(inci.getId()).getId());
-		assertEquals(1, inciRepository.findByAgentIdentificador("M2").size());
+		assertEquals(1, inciRepository.findByEmailAgente("m@uniovi.es").size());
 	}
 	
 	@Test

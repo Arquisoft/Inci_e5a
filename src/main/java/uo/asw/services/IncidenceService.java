@@ -31,9 +31,9 @@ public class IncidenceService {
 		return incidenceRepository.findOne(id);
 	}
 	
-	public List<Incidence> getIncidencesByAgentId(String id)
+	public List<Incidence> getIncidencesByAgentEmail(String email)
 	{
-		return incidenceRepository.findByAgentIdentificador(id);
+		return incidenceRepository.findByEmailAgente(email);
 	}
 	
 	public Incidence saveIncidence (Incidence incidence)
