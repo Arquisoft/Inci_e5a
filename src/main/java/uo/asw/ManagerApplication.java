@@ -5,12 +5,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Application {
+public class ManagerApplication {
 
-	public static final Logger logger = Logger.getLogger(Application.class);
+	public static final Logger logger = Logger.getLogger(ManagerApplication.class);
 	
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(ManagerApplication.class, args);
 	}
 
 }

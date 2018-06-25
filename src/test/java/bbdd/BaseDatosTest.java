@@ -11,14 +11,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import uo.asw.Application;
+import uo.asw.ManagerApplication;
 import uo.asw.entities.Agent;
 import uo.asw.entities.Incidence;
 import uo.asw.entities.TipoIncidencia;
 import uo.asw.repositories.IncidenceRepository;
 import uo.asw.services.IncidenceService;
 
-@SpringBootTest(classes = { Application.class })
+@SpringBootTest(classes = { ManagerApplication.class })
 @RunWith(SpringJUnit4ClassRunner.class)
 public class BaseDatosTest 
 {

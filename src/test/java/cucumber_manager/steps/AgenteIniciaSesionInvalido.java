@@ -12,10 +12,10 @@ import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
-import uo.asw.Application;
+import uo.asw.ManagerApplication;
 import uo.asw.services.AgentsService;
 
-@ContextConfiguration(classes = Application.class, loader = SpringBootContextLoader.class)
+@ContextConfiguration(classes = ManagerApplication.class, loader = SpringBootContextLoader.class)
 @WebAppConfiguration
 @ActiveProfiles("INTEGRATION_TEST")
 public class AgenteIniciaSesionInvalido 
