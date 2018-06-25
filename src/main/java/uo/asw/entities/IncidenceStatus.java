@@ -1,4 +1,4 @@
-package asw.inciManager.inciManager_e5a.entities;
+package uo.asw.entities;
 
 public enum IncidenceStatus {
 

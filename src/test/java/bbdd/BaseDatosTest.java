@@ -11,12 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import asw.Application;
-import asw.inciManager.inciManager_e5a.entities.Agent;
-import asw.inciManager.inciManager_e5a.entities.Incidence;
-import asw.inciManager.inciManager_e5a.entities.TipoIncidencia;
-import asw.inciManager.inciManager_e5a.repositories.IncidenceRepository;
-import asw.inciManager.inciManager_e5a.services.IncidenceService;
+import uo.asw.Application;
+import uo.asw.entities.Agent;
+import uo.asw.entities.Incidence;
+import uo.asw.entities.TipoIncidencia;
+import uo.asw.repositories.IncidenceRepository;
+import uo.asw.services.IncidenceService;
 
 @SpringBootTest(classes = { Application.class })
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -37,7 +37,7 @@ public class BaseDatosTest
 	public void setUp() 
 	{
 		agente=new Agent("Miguel", "uniovi2", "m@uniovi.es", "M2", "Pravia", "Persona", 2);
-		inci=new Incidence("Fuga de agua", "Fuga de agua en una alcantarilla cerca del ayuntamiento ", agente, null, TipoIncidencia.SENSOR_INUNDACION, 200.2);
+		inci=new Incidence("Fuga de agua", "Fuga de agua en una alcantarilla cerca del ayuntamiento ", agente.getEmail(), null, TipoIncidencia.SENSOR_INUNDACION, 200.2);
 		inciService.saveIncidence(inci);
 	}
 	

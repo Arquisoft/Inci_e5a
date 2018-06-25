@@ -1,4 +1,4 @@
-package asw.inciManager.inciManager_e5a.services;
+package uo.asw.services;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import asw.inciManager.inciManager_e5a.entities.Agent;
-import asw.inciManager.inciManager_e5a.repositories.AgentRepository;
+import uo.asw.entities.Agent;
+import uo.asw.repositories.AgentRepository;
 
 
 @Service

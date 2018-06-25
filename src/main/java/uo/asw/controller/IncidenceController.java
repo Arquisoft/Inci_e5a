@@ -1,4 +1,4 @@
-package asw.inciManager.inciManager_e5a.controller;
+package uo.asw.controller;
 
 import java.security.Principal;
 import java.util.ArrayList;
@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import asw.inciManager.inciManager_e5a.entities.Agent;
-import asw.inciManager.inciManager_e5a.entities.Incidence;
-import asw.inciManager.inciManager_e5a.entities.TipoIncidencia;
-import asw.inciManager.inciManager_e5a.services.AgentsService;
-import asw.inciManager.inciManager_e5a.services.IncidenceService;
+import uo.asw.entities.Agent;
+import uo.asw.entities.Incidence;
+import uo.asw.entities.TipoIncidencia;
+import uo.asw.services.AgentsService;
+import uo.asw.services.IncidenceService;
 
 @Controller
 public class IncidenceController {
@@ -44,10 +44,9 @@ public class IncidenceController {
 	public String createIncidence(@RequestParam String name, @RequestParam String description, @RequestParam String tags,
 			@RequestParam String tipos, @RequestParam String latitud, @RequestParam String longitud,@RequestParam String valores,Principal agente) 
 	{
-		Agent agent = agentsService.getAgent(agente.getName());
 		TipoIncidencia tipoI = Incidence.tipos.stream().filter(x -> x.toString().equals(tipos)).findFirst().get();
 		double valor = Double.parseDouble(valores);
-		Incidence incidence = new Incidence(name, description, agent, obtainTagsList(tags), tipoI, valor);
+		Incidence incidence = new Incidence(name, description, agente.getName(), obtainTagsList(tags), tipoI, valor);
 		incidence.setLatitud(Double.parseDouble(latitud));
 		incidence.setLongitud(Double.parseDouble(longitud));
 		incidenceService.addIncidence(incidence);

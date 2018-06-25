@@ -5,20 +5,15 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import asw.inciManager.inciManager_e5a.entities.Agent;
-import asw.inciManager.inciManager_e5a.entities.Incidence;
-import asw.inciManager.inciManager_e5a.entities.TipoIncidencia;
-import asw.inciManager.inciManager_e5a.services.AgentsService;
-import asw.inciManager.inciManager_e5a.services.IncidenceService;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
+import uo.asw.entities.Incidence;
+import uo.asw.entities.TipoIncidencia;
+import uo.asw.services.IncidenceService;
 
 public class EnviarIncidenciaStep {
-    
-    @Autowired
-    AgentsService agentsService;
     
     @Autowired
     IncidenceService incidenceService;
@@ -82,8 +77,7 @@ public class EnviarIncidenciaStep {
     @Cuando("^tratamos de enviar esa incidencia a través de Kafka$")
     public void introduzco_los_datos_en_el_formulario() 
     {
-		Agent agente=agentsService.getAgent(user);
-		incidenceService.addIncidence(new Incidence(nombreIncidencia, descripcionIncidencia, agente, etiquetas, TipoIncidencia.SENSOR_TEMPERATURA, 0.0));
+		incidenceService.addIncidence(new Incidence(nombreIncidencia, descripcionIncidencia, user, etiquetas, TipoIncidencia.SENSOR_TEMPERATURA, 0.0));
 		
     }
     

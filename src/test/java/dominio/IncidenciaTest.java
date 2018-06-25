@@ -8,9 +8,9 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import asw.inciManager.inciManager_e5a.entities.Agent;
-import asw.inciManager.inciManager_e5a.entities.Incidence;
-import asw.inciManager.inciManager_e5a.entities.TipoIncidencia;
+import uo.asw.entities.Agent;
+import uo.asw.entities.Incidence;
+import uo.asw.entities.TipoIncidencia;
 
 public class IncidenciaTest 
 {
@@ -23,17 +23,17 @@ public class IncidenciaTest
 		List<String> tags=new ArrayList<String>();
 		tags.add("terremoto");
 		tags.add("seismo");
-		inci1=new Incidence("Incidencia1", "Terremoto", a1, tags , TipoIncidencia.SENSOR_SEISMO, 40.2);
+		inci1=new Incidence("Incidencia1", "Terremoto", a1.getEmail(), tags , TipoIncidencia.SENSOR_SEISMO, 40.2);
 		tags.remove("gas");
 		tags.remove("fugas");
 		tags.add("inundacion");
 		tags.add("agua");
-		inci2=new Incidence("Incidencia2", "Inundación del sotano", a1, tags, TipoIncidencia.SENSOR_INUNDACION, 100.2);
+		inci2=new Incidence("Incidencia2", "Inundación del sotano", a1.getEmail(), tags, TipoIncidencia.SENSOR_INUNDACION, 100.2);
 		tags.remove("agua");
 		tags.remove("inundacion");
 		tags.add("caldera");
 		tags.add("calor");
-		inci3=new Incidence("Incidencia3", "Sobrecalentamiento de caldera", a1, tags, TipoIncidencia.SENSOR_TEMPERATURA, 1000.1);
+		inci3=new Incidence("Incidencia3", "Sobrecalentamiento de caldera", a1.getEmail(), tags, TipoIncidencia.SENSOR_TEMPERATURA, 1000.1);
 	}
 	
 	@Test

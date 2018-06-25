@@ -1,4 +1,4 @@
-package asw.inciManager.kafkamanager.producers;
+package uo.asw.kafka;
 
 import java.util.HashMap;
 import java.util.Map;

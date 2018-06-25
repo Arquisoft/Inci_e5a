@@ -1,11 +1,11 @@
-package asw.inciManager.inciManager_e5a.repositories;
+package uo.asw.repositories;
 
 import java.util.List;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import asw.inciManager.inciManager_e5a.entities.Incidence;
+import uo.asw.entities.Incidence;
 
 
 public interface IncidenceRepository extends MongoRepository<Incidence, ObjectId> {

@@ -1,4 +1,4 @@
-package asw.inciManager.inciManager_e5a.services;
+package uo.asw.services;
 
 
 import java.util.List;
@@ -7,9 +7,9 @@ import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import asw.inciManager.inciManager_e5a.entities.Incidence;
-import asw.inciManager.inciManager_e5a.repositories.IncidenceRepository;
-import asw.inciManager.kafkamanager.producers.KafkaProducer;
+import uo.asw.entities.Incidence;
+import uo.asw.kafka.KafkaProducer;
+import uo.asw.repositories.IncidenceRepository;
 
 @Service
 public class IncidenceService {

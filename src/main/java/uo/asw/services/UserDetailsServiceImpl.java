@@ -1,4 +1,4 @@
-package asw.inciManager.inciManager_e5a.services;
+package uo.asw.services;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,8 +11,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import asw.inciManager.inciManager_e5a.entities.Agent;
-import asw.inciManager.inciManager_e5a.repositories.AgentRepository;
+import uo.asw.entities.Agent;
+import uo.asw.repositories.AgentRepository;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {

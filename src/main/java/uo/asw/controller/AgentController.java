@@ -1,4 +1,4 @@
-package asw.inciManager.inciManager_e5a.controller;
+package uo.asw.controller;
 
 
 import java.security.Principal;
@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import asw.inciManager.inciManager_e5a.entities.Agent;
-import asw.inciManager.inciManager_e5a.services.AgentsService;
-import asw.inciManager.inciManager_e5a.services.SecurityService;
+import uo.asw.entities.Agent;
+import uo.asw.services.AgentsService;
+import uo.asw.services.SecurityService;
 
 @Controller
 public class AgentController {

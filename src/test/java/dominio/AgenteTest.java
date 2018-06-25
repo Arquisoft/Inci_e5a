@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
-import asw.inciManager.inciManager_e5a.entities.Agent;
+import uo.asw.entities.Agent;
 
 public class AgenteTest 
 {

@@ -1,4 +1,4 @@
-package asw.inciManager.inciManager_e5a.services;
+package uo.asw.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;

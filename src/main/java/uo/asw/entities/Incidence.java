@@ -1,4 +1,4 @@
-package asw.inciManager.inciManager_e5a.entities;
+package uo.asw.entities;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -18,9 +18,7 @@ public class Incidence {
 	@Id
 	private ObjectId _id;
 
-	private String name, description;
-
-	private Agent agent;
+	private String name, description,agent;
 
 	private Date date;
 	private IncidenceStatus status;
@@ -36,7 +34,7 @@ public class Incidence {
 	private Double valor;
 	private double latitud, longitud;
 
-	public Incidence(String name, String description, Agent agent, List<String> tags, TipoIncidencia tipo,
+	public Incidence(String name, String description, String agent, List<String> tags, TipoIncidencia tipo,
 			Double valor) {
 		this.name = name;
 		this.description = description;
@@ -53,12 +51,12 @@ public class Incidence {
 	
 	public Incidence() {}
 
-	public Agent getAgente()
+	public String getAgente()
 	{
 		return agent;
 	}
 	
-	public void setAgente(Agent agente)
+	public void setAgente(String agente)
 	{
 		this.agent=agente;
 	}
@@ -109,7 +107,7 @@ public class Incidence {
 				+ " \"description\" : \""+ description + "\", " 
 				+ " \"date\" : \"" + date + "\", " 
 				+ " \"status\" : \"" + status + "\", "
-				+ " \"agent\" : \"" + agent.getNombre() + "\", " 
+				+ " \"agent\" : \"" + agent + "\", " 
 				+ " \"tags\" : [" + tagsList() + "], "
 				+ " \"type\" : \"" + type + "\", " 
 				+ " \"valor\" : " + valor + ", "
@@ -164,6 +162,14 @@ public class Incidence {
 	public void setName(String name) 
 	{
 		this.name=name;
+	}
+	
+	public static TipoIncidencia parseTipo(String tipo) {
+		return tipos.stream().filter(x -> x.toString().equals(tipo)).findFirst().get();
+	}
+	
+	public static IncidenceStatus parseEstado(String estado) {
+		return estados.stream().filter(x -> x.toString().equals(estado)).findFirst().get();
 	}
 
 }

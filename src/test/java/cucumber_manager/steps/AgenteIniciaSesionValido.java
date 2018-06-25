@@ -6,13 +6,13 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import asw.Application;
-import asw.inciManager.inciManager_e5a.entities.Agent;
-import asw.inciManager.inciManager_e5a.services.AgentsService;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
+import uo.asw.Application;
+import uo.asw.entities.Agent;
+import uo.asw.services.AgentsService;
 
 @ContextConfiguration(classes = Application.class, loader = SpringBootContextLoader.class)
 @WebAppConfiguration

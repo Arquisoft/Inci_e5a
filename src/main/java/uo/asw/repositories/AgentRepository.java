@@ -1,9 +1,9 @@
-package asw.inciManager.inciManager_e5a.repositories;
+package uo.asw.repositories;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import asw.inciManager.inciManager_e5a.entities.Agent;
+import uo.asw.entities.Agent;
 
 
 

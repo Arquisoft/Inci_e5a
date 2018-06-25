@@ -1,4 +1,4 @@
-package asw;
+package uo.asw;
 
 import org.apache.log4j.Logger;
 import org.springframework.boot.SpringApplication;
