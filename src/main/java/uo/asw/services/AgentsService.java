@@ -3,6 +3,7 @@ package uo.asw.services;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,7 +17,8 @@ public class AgentsService {
 	@Autowired 
 	private AgentRepository agentsRepository;
 	
-	public static final String URL = "http://localhost:8081/agents";
+	@Value("${agents}")
+	public String URL;
 	
 	/**
 	 * Método que devuelve el Agente buscado por email

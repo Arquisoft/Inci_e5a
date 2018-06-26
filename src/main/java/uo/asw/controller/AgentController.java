@@ -43,12 +43,12 @@ public class AgentController {
 
 	@RequestMapping(value = "/userlogin", method = RequestMethod.POST)
 	public String loginPost(@RequestParam String email, @RequestParam String password, @RequestParam String type) {
-//		if (!agentsService.comprobarAgente(email,password,type))
-//			return "redirect:/userlogin?error";
-// Cuando se despliegue, descomentar esto y borrar las 3 lineas siguientes
-		Agent agent = agentsService.getAgent(email);
-		if (agent == null || !agent.getKind().equals(type))
+		if (!agentsService.comprobarAgente(email,password,type))
 			return "redirect:/userlogin?error";
+// Cuando se despliegue, descomentar esto y borrar las 3 lineas siguientes
+		//Agent agent = agentsService.getAgent(email);
+		//if (agent == null || !agent.getKind().equals(type))
+		//	return "redirect:/userlogin?error";
 		try {
 			securityService.autoLogin(email, password);
 		} catch (Exception e) {
