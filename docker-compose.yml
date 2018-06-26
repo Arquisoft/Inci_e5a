@@ -1,24 +1,21 @@
 version: '3.4'
 
 services:
-
   zookeeper:
     image: wurstmeister/zookeeper
     ports:
       - "2181:2181"
-  
+  incimanager:
+    build:
+      context: .
+    image: incimanager_e5a
+    ports:
+      - "8000:8090"
+    depends_on:
+      - zookeeper
   agents:
     build:
       context: ./Agents_e5a
     image: agents_e5a
     ports:
       - "8001:8080"
-  	 
-  incimanager:
-    build:
-      context: .
-    image: incimanaget_e5a
-    ports:
-      - "8000:8090"
-    depends_on:
-      - zookeeper
