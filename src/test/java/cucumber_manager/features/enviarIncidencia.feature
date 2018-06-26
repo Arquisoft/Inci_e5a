@@ -4,8 +4,8 @@ Característica: Envío de una incidencia por parte de un agente
 	
 	Escenario: Iniciamos sesión con un usuario y enviamos una incidencia a través de Kafka
 
-		Dado el email del agente que va a enviar la incidencia 'miguel@uniovi.es'
-			Y su password 'Contra'
+		Dado el email del agente que va a enviar la incidencia 'candi@uniovi.es'
+			Y su password 'Ci3NIl8VJN'
 			Y su tipo 'Persona'
 			
 		Dado la incidencia recogida por un agente loggeado

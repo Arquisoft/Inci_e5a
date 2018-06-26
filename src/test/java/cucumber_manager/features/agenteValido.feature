@@ -4,8 +4,8 @@ Característica: Inicio de sesión con un usuario válido
 
 	Escenario: Introducimos los datos de un usuario existente en el sistema
 	
-		Dado el email del agente es 'alvaro@uniovi.es'
-			Y su password es 'Contra'
+		Dado el email del agente es 'candi@uniovi.es'
+			Y su password es 'Ci3NIl8VJN'
 			Y su tipo es 'Persona'
 			
 		Cuando tratamos de logearnos con esas credenciales
