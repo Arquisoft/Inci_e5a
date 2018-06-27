@@ -21,11 +21,14 @@ InciManager
 Es necesario, previo a la ejecución de esta aplicación, ejecutar la aplicación del módulo Agents_e5a,
 para que el servicio REST se pueda ejecutar correctamente.
 
-1-Ejecutar desde Eclipse la clase ManagerApplication
+1-Clonar el repositorio en el espacio de trabajo.
 
-2-Conectarse a http://localhost:8090/
+2-Acceder a la carpeta con la consola de comandos y ejecutar mvn spring-boot:run. 
+Si no se dispone de Maven, descargar de su web oficial https://maven.apache.org/download.cgi
 
-3-Introducir datos de usuario:
+3-Conectarse a http://localhost:8090/
+
+4-Introducir datos de usuario:
 
 Usuarios
 
@@ -37,6 +40,6 @@ Usuarios
 
  Usuario: jesus@uniovi.es Contraseña: Contra
 
-4-Rellenar los datos de la incidencia
+5-Rellenar los datos de la incidencia
 
-5-Enviar los datos de la incidencia
+6-Enviar los datos de la incidencia
